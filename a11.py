@@ -1,6 +1,4 @@
-def binary_search():
-    target = 100
-    list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+def binary_search(target: int, list: list[int]) -> int:
     left = 0
     right = len(list) - 1
     index = -1
@@ -13,7 +11,15 @@ def binary_search():
             right = middle
         if list[middle] < target:
             left = middle + 1
+    return index
+
+
+def main():
+    n, x = map(int, input().split())
+    a = list(map(int, input().split()))
+    index = binary_search(x, a)
     print(index)
 
 
-binary_search()
+if __name__ == '__main__':
+    main()
